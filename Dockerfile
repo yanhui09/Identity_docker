@@ -28,8 +28,8 @@ RUN cd Identity \
     && mkdir bin \
     && cd bin \
     && cmake .. \
-    && make
-
-ENV PATH /tmp/repo/Identity/bin:${PATH} 
+    && make \
+    && cp identity meshclust /usr/local/bin \
+    && cp *.so /usr/local/lib
 
 WORKDIR /home
