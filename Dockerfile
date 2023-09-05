@@ -29,7 +29,6 @@ RUN cd Identity \
     && cd bin \
     && cmake .. \
     && make \
-    && cp identity meshclust /usr/local/bin \
-    && cp *.so /usr/local/lib
-
+    && cp identity meshclust *.so /usr/local/bin
+    
 WORKDIR /home
