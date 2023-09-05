@@ -16,7 +16,8 @@ RUN apt-get update \
 
 RUN git clone https://github.com/BioinformaticsToolsmith/Identity.git
 
-RUN micromamba env -q -y -c conda-forge -n identity cmake cxx-compiler \
+RUN micromamba create -q -y -c conda-forge -n identity \
+    cmake cxx-compiler \
     && eval "$(micromamba shell hook -s bash)" \
     && micromamba activate /opt/conda/envs/identity \
     && micromamba clean --all --yes
