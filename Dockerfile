@@ -28,7 +28,6 @@ RUN cd Identity \
     && mkdir bin \
     && cd bin \
     && cmake .. \
-    && make \
-    && ln -s identity /usr/local/bin/identity \
-    && ln -s meshclust /usr/local/bin/meshclust
-    
+    && make
+
+ENV PATH /tmp/repo/Identity/bin:${PATH}
