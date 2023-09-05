@@ -1,8 +1,8 @@
 # Container image that runs your code
 FROM mambaorg/micromamba
 LABEL org.opencontainers.image.authors="Yan Hui <me@yanh.org>"
-ADD . /tmp/repo
-WORKDIR /tmp/repo
+ADD . /opt/repo
+WORKDIR /opt/repo
 ENV LANG C.UTF-8
 ENV SHELL /bin/bash
 USER root 
@@ -30,4 +30,6 @@ RUN cd Identity \
     && cmake .. \
     && make
 
-ENV PATH /tmp/repo/Identity/bin:${PATH}
+ENV PATH /opt/repo/Identity/bin:${PATH}
+
+WORKDIR /home
